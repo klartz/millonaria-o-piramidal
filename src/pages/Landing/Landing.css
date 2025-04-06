@@ -65,9 +65,23 @@
   border: 1px solid rgb(var(--color-primary) / .5);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
+  position: relative;
+
   h2 {
     color: rgb(var(--color-primary));
     margin-bottom: 16px;
+  }
+
+  &::before {
+    content: "Demo 100% real";
+    position: absolute;
+    top: -8px;
+    right: -24px;
+    padding: 8px;
+    background-color: rgb(var(--color-secondary));
+    border-radius: 24px;
+    font-size: var(--fs-small);
+    transform: rotate(20deg);
   }
 }
 
