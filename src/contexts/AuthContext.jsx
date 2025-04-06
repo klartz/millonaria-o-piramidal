@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
+import { getAccountTier } from '../services';
 
 const AuthContext = createContext();
 
@@ -25,7 +26,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchTier = async () => {
       if (session?.user?.id) {
-        const tier = await getAcountTier(session.user.id)
+        const tier = await getAccountTier(session.user.id)
         setAccountTier(tier)
       }
     }

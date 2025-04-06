@@ -1,6 +1,6 @@
 import { supabase } from "../lib/supabaseClient";
 
-const getAcountTier = async (userId) => {
+const getAccountTier = async (userId) => {
   try {
     const { data } = await supabase
     .from('profiles')
@@ -15,4 +15,4 @@ const getAcountTier = async (userId) => {
   }
 }
 
-export default getAcountTier;
+export default getAccountTier;

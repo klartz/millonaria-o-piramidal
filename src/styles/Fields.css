@@ -1,0 +1,19 @@
+.mantine-Input-wrapper {
+    display: flex;
+}
+
+.mantine-Input-wrapper, .mantine-Input-input {
+    flex: 1;
+}
+
+.mantine-InputWrapper-label {
+    color: rgb(var(--color-text-body));
+}
+
+.mantine-Input-input {
+    font-family: inherit;
+    font-size: inherit;
+    padding: .5rem;
+    border-radius: 8px;
+    border: 1px solid #EBEBED;
+}
