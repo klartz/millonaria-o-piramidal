@@ -35,7 +35,7 @@ function Landing() {
             </div>
             <div>
               <div className='landing--prompt'>"Una aplicación que usa blockchain para repartir lomitos con palomas mensajeras..."</div>
-              <div className='landing--response'>Probablemente sea una estafa: Las palomas no pueden llevar lomitos y una blockchain.</div>
+              <div className='landing--response'>Probablemente sea una estafa: Las palomas se comerían los lomitos.</div>
             </div>
             <Button fullWidth disabled>Probar con otra idea</Button>
           </div>
