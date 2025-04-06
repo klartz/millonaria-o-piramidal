@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 import { Landing, Home } from './pages'
 import { MantineProvider } from '@mantine/core'
+import { Navbar } from './components'
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth()
@@ -14,6 +15,7 @@ function App() {
     <AuthProvider>
       <MantineProvider>
         <BrowserRouter>
+        <Navbar/>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route
