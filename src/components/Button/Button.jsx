@@ -12,7 +12,7 @@ import './Button.css';
  * - fullWidth: Boolean indicating if the button should take the full width of its container.
  */
 const Button = ({ children, onClick, disabled, style="filled", fullWidth }) => {
-  const classNames = [];
+  const classNames = ['button'];
   if (style) {
     classNames.push(`button--${style}`);
   }
