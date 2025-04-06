@@ -1,5 +1,6 @@
-import getPromptsUsage from "./getPromptsUsage";
-import updatePromptUsage from "./updatePromptUsage";
-import callOpenAI from "./submitPrompt";
+import getAccountTier from './getAccountTier';
+import getPromptUsage from './getPromptUsage';
+import updatePromptUsage from './updatePromptUsage';
+import submitPrompt from './submitPrompt';
 
-export { getPromptsUsage, updatePromptUsage, callOpenAI };
+export { getAccountTier, getPromptUsage, updatePromptUsage, submitPrompt };
