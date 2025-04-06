@@ -1,10 +1,9 @@
 .landing {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-  .landing>* {
+  &>* {
     flex: 1;
   }
 
@@ -27,6 +26,7 @@
   span:nth-of-type(1) {
     color: rgb(var(--color-primary));
   }
+
   span:nth-of-type(2) {
     color: rgb(var(--color-secondary));
   }
@@ -34,53 +34,57 @@
   h1 {
     margin-bottom: 16px;
   }
+}
 
-  .main-text {
-    max-width: 704px;
-    margin-bottom: 24px;
+.landing--main-text {
+  max-width: 704px;
+  margin-bottom: 24px;
+}
+
+.landing--small-note {
+  font-size: var(--fs-small);
+}
+
+.landing--buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.landing--demo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 384px;
+  min-height: 322px;
+  padding: 24px;
+  gap: 8px;
+
+  background-color: rgb(var(--color-light));
+  border-radius: 8px;
+  border: 1px solid rgb(var(--color-primary) / .5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: rgb(var(--color-primary));
+    margin-bottom: 16px;
   }
+}
 
-  .small-note {
-    font-size: var(--fs-small);
-  }
+.landing--prompt,
+.landing--response {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid;
+}
 
-  .buttons {
-    display: flex;
-    gap: 8px;
-  }
+.landing--prompt {
+  background-color: rgb(var(--color-primary) / .2);
+  border-color: rgb(var(--color-primary) / .8);
+  margin-bottom: 8px;
+}
 
-  .demo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    width: 384px;
-    min-height: 322px;
-    padding: 24px;
-    gap: 8px;
-
-    background-color: rgb(var(--color-light));
-    border-radius: 8px;
-    border: 1px solid rgb(var(--color-primary) / .5);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-    h2 {
-      color: rgb(var(--color-primary));
-      margin-bottom: 16px;
-    }
-  }
-
-  .prompt, .response {
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid;
-  }
-  .prompt {
-    background-color: rgb(var(--color-primary) / .2);
-    border-color: rgb(var(--color-primary) / .8);
-    margin-bottom: 8px;
-  }
-  .response {
-    background-color: rgb(var(--color-secondary) / .2);
-    border-color: rgb(var(--color-secondary) / .8);
-  }
+.landing--response {
+  background-color: rgb(var(--color-secondary) / .2);
+  border-color: rgb(var(--color-secondary) / .8);
+}

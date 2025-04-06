@@ -22,32 +22,32 @@ function Landing() {
       <div className="landing">
         <section>
           <div>
-            <div className='main-text'>
+            <div className='landing--main-text'>
               <h1>¿Tu idea es de una <span>startup millonaria</span> o una <span>estafa piramidal</span>? 🤔</h1>
               <p>¡Contanos tu idea y nuestra IA te dirá si tu startup es la próxima idea millonaria o simplemente estás estafando a tus clientes!</p>
             </div>
           </div>
 
-          <div className='demo'>
+          <div className='landing--demo'>
             <div>
               <h2>Escribí tu gran idea</h2>
               <p>Nuestra IA va a prenteder analizarla cuidadosamente</p>
             </div>
             <div>
-              <div className='prompt'>"Una aplicación que usa blockchain para repartir lomitos con palomas mensajeras..."</div>
-              <div className='response'>Probablemente sea una estafa: Las palomas no pueden llevar lomitos y una blockchain.</div>
+              <div className='landing--prompt'>"Una aplicación que usa blockchain para repartir lomitos con palomas mensajeras..."</div>
+              <div className='landing--response'>Probablemente sea una estafa: Las palomas no pueden llevar lomitos y una blockchain.</div>
             </div>
             <Button fullWidth disabled>Probar con otra idea</Button>
           </div>
         </section>
 
         <section>
-          <div className='main-text'>
+          <div className='landing--main-text'>
             <h1>¿Estás listo para averiguar si se te ocurrió una idea millonaria? (Spoiler: Probablemente no)</h1>
             <p>¡Unite a miles* de usuarios (imaginarios) que ya averiguaron si sus ideas valían la pena!</p>
-            <p className='small-note'>(*Número posiblemente exagerado)</p>
+            <p className='landing--small-note'>(*Número posiblemente exagerado)</p>
           </div>
-          <div className='buttons'>
+          <div className='landing--buttons'>
             <Button
               onClick={() => setAuthPopupOpen(!session)}>
               Iniciar sesión
