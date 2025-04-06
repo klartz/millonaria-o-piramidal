@@ -1,14 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { createClient } from '@supabase/supabase-js'
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
+import { supabase } from '../lib/supabaseClient';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [session, setSession] = useState(null)
+  const [accountTier, setAccountTier] = useState(null)
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -25,15 +22,27 @@ export const AuthProvider = ({ children }) => {
   }, [])
 
 
+  useEffect(() => {
+    const fetchTier = async () => {
+      if (session?.user?.id) {
+        const tier = await getAcountTier(session.user.id)
+        setAccountTier(tier)
+      }
+    }
+
+    fetchTier()
+  }, [session])
+
   const logout = async () => {
     await supabase.auth.signOut()
     setSession(null)
   }
 
   const isAuthenticated = !!session
+  const userId = session?.user?.id
 
   return (
-    <AuthContext.Provider value={{ session, isAuthenticated, logout, supabase }}>
+    <AuthContext.Provider value={{ session, isAuthenticated, logout, supabase, userId, accountTier }}>
       {children}
     </AuthContext.Provider>
   );
