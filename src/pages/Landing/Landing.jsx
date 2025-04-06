@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../../components'
 import { useAuth } from '../../contexts'
 import AuthPopup from '../../features/AuthPopup/AuthPopup'
 import './Landing.css'
+import { useNavigate } from 'react-router-dom'
 
 function Landing() {
-  const { session } = useAuth()
+  const { session, isAuthenticated } = useAuth()
   const [authPopupOpen, setAuthPopupOpen] = useState(false)
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/home')
+    }
+  }, [isAuthenticated])
 
   return (
     <>
